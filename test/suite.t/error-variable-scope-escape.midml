@@ -1,0 +1,2 @@
+let rigid_escape = fun f ->
+  (fun x -> f x : for 'a . 'a -> 'a)

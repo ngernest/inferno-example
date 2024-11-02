@@ -1,0 +1,10 @@
+#use list.midml
+
+let _ =
+  Cons (
+    fun x -> x,
+    Cons (
+      fun x -> x,
+      Nil
+    )
+  )

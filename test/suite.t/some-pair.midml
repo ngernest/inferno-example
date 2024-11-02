@@ -1,0 +1,4 @@
+#use option.midml
+
+let _ =
+  Some (fun x -> x, fun x -> x)

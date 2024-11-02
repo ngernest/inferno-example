@@ -1,0 +1,2 @@
+let app_error = fun x ->
+  (x, x) (fun y -> y)

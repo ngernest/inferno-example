@@ -1,0 +1,4 @@
+(* We have a redundant quantifier here: 'b is not used in the type
+   annotation. *)
+let _ =
+  (fun x -> x : for 'a 'b. 'a -> 'a) ()

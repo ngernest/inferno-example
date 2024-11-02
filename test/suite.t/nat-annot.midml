@@ -1,0 +1,2 @@
+#use nat.midml
+let f = (fun x -> x : nat -> nat)

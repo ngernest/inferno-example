@@ -1,0 +1,11 @@
+#use nat.midml
+
+(* toplevel recursion is currently not supported,
+   so we wrap a "let rec .. in .." *)
+let add =
+  let rec add = fun m n ->
+    match m with
+    | Zero -> n
+    | Succ m1 -> add m1 (Succ n)
+    end
+  in add

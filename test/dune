@@ -1,0 +1,41 @@
+(library
+  (name test)
+  (libraries client alcotest qcheck-alcotest)
+  (modules Config CheckML CheckF RandomML Measure Colors)
+)
+
+(test
+  (name TestF)
+  (libraries client test)
+  (modules TestF)
+  (flags :standard -w A-4-44)
+)
+
+(test
+  (name TestML)
+  (libraries client test)
+  (modules TestML)
+  (flags :standard -w A-4-44)
+)
+
+(test
+  (name TestMLRandom)
+  (libraries qcheck client test)
+  (modules TestMLRandom)
+  (flags :standard -w A-4-44)
+  (action
+    ; we use an action mentioning the INFERNO_SLOW_TESTS variable
+    ; so that Dune knows that the test behavior depends on it,
+    ; and re-runs it if the environment variable changes.
+    (progn (echo %{env:INFERNO_SLOW_TESTS=1}) (run ./TestMLRandom.exe)))
+)
+
+(executable
+  (name BenchMLRandom)
+  (libraries client test)
+  (modules BenchMLRandom)
+  (flags :standard -w A-4-44)
+)
+
+(cram
+  (deps %{bin:midml}))

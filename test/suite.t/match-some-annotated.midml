@@ -1,0 +1,7 @@
+#use option.midml
+
+let _ =
+  match Some (fun x -> x) with
+  | None -> None
+  | (Some _ : some 'a. option 'a) -> None
+  end

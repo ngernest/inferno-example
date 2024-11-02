@@ -1,0 +1,1 @@
+let self_app = fun x -> x x

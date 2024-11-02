@@ -1,0 +1,19 @@
+(ocamllex
+  (modules MLLexer))
+
+(menhir
+  (modules MLParser))
+
+(library
+  (name client)
+  (libraries pprint alcotest qcheck-alcotest menhirLib inferno)
+  (preprocess (pps ppx_compare))
+)
+
+;; Warnings are enabled (and fatal) during development,
+;; but are disabled in releases.
+
+(env
+  (dev (flags :standard -g -w A-4-32-44-70))
+  (release (flags :standard))
+)

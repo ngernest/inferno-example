@@ -1,0 +1,2 @@
+let g = fun f ->
+  (f : for 'a. 'a -> 'a)

@@ -1,0 +1,4 @@
+(* We have unreachable generalizable variables inside the left-hand
+   side of a [letr] combinator. *)
+let _ =
+  ((fun x -> fun y -> y) (fun x -> x) : for 'a. 'a -> 'a) ()

@@ -1,0 +1,2 @@
+let _ =
+  (fun x -> x : some 'a 'b. 'a -> 'b)

@@ -1,0 +1,4 @@
+(* expected type: 'a 'b. 'a -> 'b *)
+let loop =
+  let rec loop = fun x -> loop x in
+  loop

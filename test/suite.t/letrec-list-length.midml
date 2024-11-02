@@ -1,0 +1,12 @@
+#use nat.midml
+#use list.midml
+
+(* toplevel recursion is currently not supported,
+   so we wrap a "let rec .. in .." *)
+let length =
+  let rec length = fun xs ->
+    match xs with
+    | Nil -> Zero
+    | Cons (_, rest) -> Succ (length rest)
+    end
+  in length
